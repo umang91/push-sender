@@ -1,7 +1,8 @@
 package dev.assemblage.push.sender
 
-const val SERVER_KEY = "<YOUR_SERVER_KEY>"
-
 fun main(args: Array<String>) {
-    FcmSender().sendPush(SERVER_KEY, "fcm/payload/payload.json")
+    FcmV1Sender().sendPush(
+        "fcmclientlib",
+        "dZtBlw8VSJGyaFfUWPhc8M:APA91bGZov1loiPyJlcJcjs7Xpsq21dolXPFZ8XWr1NryqQHHqLlVR6uQjdeueBqBspZ5d61Id_Axqz66ph0nVbRGEjGKJpaqyNn-iRhT37kVZBblmcDuEYq3H-fHEa5kDVnHpSctMKl"
+    )
 }

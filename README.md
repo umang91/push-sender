@@ -4,16 +4,13 @@ A utility project to send Firebase Cloud Message notification. Supports sending 
 
 ### Usage
 
-### Tokens
-Add the token(s) to the `tokens.json` file in the `resources/fcm` folder.
+### Project Name and Token 
+Pass the project name token as input parameter to `sendPush()` of `FcmV1Sender`
 
 ### Payload
 Define the payload to be sent in the `payload.json` file in the `resources/fcm/payload` folder.
 
-### Server Key
-Set the server key for sending the push notification in the `Main.kt` file, use the defined constant in the file.
+### Credentials
+Add `service_account.json` file(downloaded from the firebase console) in the `src/main/resources` folder for authentication. 
 
-```kotlin
-const val SERVER_KEY ="<YOUR_FCM_SERVER_KEY>"
-```
 Once the above configurations are done, the project is ready to send out push notifications. Just run the application i.e. run the main function to send notification to the device.

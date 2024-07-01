@@ -32,7 +32,3 @@ fun loadFileContent(filePath: String): String {
 fun loadJsonObject(filePath: String): JSONObject {
     return JSONObject(loadFileContent(filePath))
 }
-
-fun loadJsonArray(filePath: String): JSONArray {
-    return JSONArray(loadFileContent(filePath))
-}
