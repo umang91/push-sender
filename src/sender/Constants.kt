@@ -1,3 +1,3 @@
-package dev.assemblage.push.sender
+package sender
 
 const val HEADER_CONTENT_TYPE = "Content-Type"

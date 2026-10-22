@@ -1,0 +1,10 @@
+product: jvm/app
+
+dependencies:
+  - com.squareup.okhttp3:okhttp:4.10.0
+  - com.google.auth:google-auth-library-oauth2-http:1.3.0
+
+settings:
+  kotlin:
+    serialization:
+      format: json
