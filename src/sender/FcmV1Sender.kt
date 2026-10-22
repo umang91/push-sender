@@ -1,4 +1,4 @@
-package dev.assemblage.push.sender
+package sender
 
 import com.google.auth.oauth2.GoogleCredentials
 import kotlinx.serialization.json.*
@@ -11,7 +11,8 @@ class FcmV1Sender {
 
     private fun getAccessToken(): String {
         val googleCredentials =
-            GoogleCredentials.fromStream(FileInputStream(javaClass.classLoader.getResource("service_account.json")?.file))
+            GoogleCredentials.fromStream(javaClass.classLoader
+                .getResourceAsStream("service_account.json"))
                 .createScoped(arrayListOf("https://www.googleapis.com/auth/firebase.messaging"))
         return googleCredentials.refreshAccessToken().tokenValue
     }
@@ -23,6 +24,7 @@ class FcmV1Sender {
                 put("data", Json.parseToJsonElement(loadFileContent("fcm/payload/payload.json")))
             }
         }
+        println("Request: $requestBody")
         val request = Request.Builder()
             .url("https://fcm.googleapis.com/v1/projects/$projectId/messages:send")
             .addHeader(HEADER_CONTENT_TYPE, "application/json; UTF-8")
